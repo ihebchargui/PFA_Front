@@ -1,0 +1,652 @@
+
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Categorie</span></th>
+                                
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let categorie of categories">
+                                    <td>
+                                        <a href="#" class="user-link">{{categorie.nom}} </a>
+                                        <span class="user-subhead">{{categorie.nom}}</span>
+                                    </td>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <td style="width: 20%;">
+                                        <!--a    (click)="onOpenModal(categorie, 'edit')" class="btn">
+                                           <span>
+                                                <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                            </span>
+                                        </a-->
+
+                                        <a (click)="onOpenModal(categorie, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
+                                            <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                        </a>
+
+  
+            
+                       
+                                        <a href="/admin"  (click)="deleteCat(categorie.id) " class="table-link danger">
+                                            <span>
+                                                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
+                                            </span>
+                                        </a>
+
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------------------------------------------------------------------->
+
+
+<div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+ 
+        <div class="container-fluid">
+ 
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-holder">
+                        <h1 class="main-title float-left">Categories</h1>
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active">Categories</li>
+                        </ol>
+                        <div class="clearfix"></div>
+                        
+ 
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            
+ 
+ 
+ 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <span class="pull-right">
+                                <h3>
+                                    <i class="far fa-user"></i> All Categories</h3>
+                                    <form class="form-inline my-2 my-lg-0">
+                                        <input type="search" (ngModelChange)="searchCategories(key.value)" #key="ngModel" ngModel
+                                         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search categories..." required>
+                                     </form>
+                                <button class="btn btn-primary btn-sm" (click)="onOpenModal(null, 'add')" data-toggle="modal" data-target="#modal_add_categorie">
+                                    <i class="fas fa-user-plus" aria-hidden="true"></i> Add new categorie</button>
+                                   
+                            </span>
+                           
+                            
+                                <form class="form-inline my-2 my-lg-0">
+                                  <input type="search" (ngModelChange)="searchCategories(key.value)" #key="ngModel" ngModel
+                                   name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search clients..." required>
+                               </form>
+                             </div>
+                        
+                        <!-- end card-header -->
+                      </div>
+                    <!-- end card -->
+ 
+                </div>
+                <!-- end col -->
+ 
+            </div>
+            <!-- end row -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        </div>
+        <!-- END container-fluid -->
+ 
+    </div>
+    <!-- END content -->
+ 
+ </div>
+ <!-- END content-page -->
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" id="main-container">
+    <div class="row">
+      <div *ngFor="let categorie of categories" class="col-md-6 col-xl-3">
+         <div class="card m-b-30">
+            <div class="card-body row">
+               
+               <div class="col-6 card-title align-self-center mb-0">
+                  <h5>{{categorie.nom}}</h5>
+               </div>
+            </div>
+            
+            <div class="card-body">
+               <div class="float-right btn-group btn-group-sm">
+                  <a (click)="onOpenModal(categorie, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                  <a (click)="onOpenModal(categorie, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addCategorieModal" tabindex="-1" role="dialog" aria-labelledby="addCategorieModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           <div class="modal-header">
+              <h5 class="modal-title" id="addCategorieModalLabel">Add Categorie</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+           </div>
+           <div class="modal-body">
+              <form #addForm="ngForm" (ngSubmit)="onAddCategorie(addForm)">
+              <div class="form-group">
+                 <label for="name">Name</label>
+                 <input type="text" ngModel name="nom" class="form-control" id="nom" placeholder="Name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleInputEmail1" >Picture Url</label>
+                <input type="text" class="form-control" ngModel name="image" id="image">
+              </div>
+              
+              
+              
+              <div class="modal-footer">
+                 <button type="button" id="add-categorie-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Sauvegarder</button>
+              </div>
+              </form>
+           </div>
+        </div>
+      </div>
+      </div>
+    
+    <!-- Edit Modal -->
+    <div class="modal fade" id="updateCategorieModal" tabindex="-1" role="dialog" aria-labelledby="categorieEditModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="updateCategorieModalLabel">Edit Categorie {{editCategorie?.nom}}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form #editForm="ngForm">
+
+                  <div class="form-group">
+                     <label for="name">Name</label>
+                     <input type="text" ngModel="{{editCategorie?.nom}}" name="nom" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Name">
+                  </div>
+                  <input type="hidden" ngModel="{{editCategorie?.id}}" name="id" class="form-control" id="id" placeholder="Email">
+                 
+                  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1" >Picture Url</label>
+                    <input type="text" class="form-control" ngModel="{{editCategorie?.image}}" name="image" id="image">
+                  </div>
+                
+                  <div class="modal-footer">
+                     <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                     <button (click)="onUpdateCategorie(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Sauvegarder</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteCategorieModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="deleteModelLabel">Delete Categorie</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <p>Are you sure you want to delete the categorie {{deleteCategorie?.nom}}?</p>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                  <button (click)="onDeleteCategorie(deleteCategorie?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+    <!--/div-->
+    
+    <!-- Notification for no employees-->
+    <div *ngIf="categorie?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">NO Client!</h4>
+      <p>No Client were found.</p>
+    </div>
+    </div> 
+    </div>
+    
+    <hr>
+<br><br>
+
+
+
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------------------------------------------->
+<!--
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Scategorie</span></th>
+                                
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let scategorie of scategories">
+                                    <td>
+                                        <a href="#" class="scategorie-link">{{scategorie.id}} </a>
+                                        <span class="user-subhead">{{scategorie.nom}}</span>
+                                    </td>
+                                    
+                                
+                                    
+                                    
+                                    
+                                    <td style="width: 20%;">-->
+                                        <!--a    (click)="onOpenModal(categorie, 'edit')" class="btn">
+                                           <span>
+                                                <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                            </span>
+                                        </a-->
+
+                                   <!--  <a (click)="onOpenModall(scategorie, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
+                                            <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                        </a>
+
+  
+            
+                       
+                                        <a href="/admin"  (click)="deleteScat(scategorie.id) " class="table-link danger">
+                                            <span>
+                                                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
+                                            </span>
+                                        </a>
+
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="content-page">
+
+    <div class="content">
+ 
+        <div class="container-fluid">
+ 
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-holder">
+                        <h1 class="main-title float-left">Scategories</h1>
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active">Scategories</li>
+                        </ol>
+                        <div class="clearfix"></div>
+                        
+ 
+                    </div>
+                </div>
+            </div>
+            
+ 
+ 
+ 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <span class="pull-right">
+                                <h3>
+                                    <i class="far fa-user"></i> All Scategories</h3>
+                                    <form class="form-inline my-2 my-lg-0">
+                                        <input type="search" (ngModelChange)="searchScategories(key.value)" #key="ngModel" ngModel
+                                         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search scategories..." required>
+                                     </form>
+                                <button class="btn btn-primary btn-sm" (click)="onOpenModall(null, 'add')" data-toggle="modal" data-target="#modal_add_scategorie">
+                                    <i class="fas fa-user-plus" aria-hidden="true"></i> Add new scategorie</button>
+                                   
+                            </span>
+                           
+                            
+                                
+                             </div>
+                        
+                      </div>
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        </div>
+ 
+    </div>
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" id="main-container">
+    <div class="row">
+      <div *ngFor="let scategorie of scategories" class="col-md-6 col-xl-3">
+         <div class="card m-b-30">
+            <div class="card-body row">
+               
+               <div class="col-6 card-title align-self-center mb-0">
+                  <h5>{{scategorie.nom}}</h5>
+               </div>
+            </div>
+            
+            <div class="card-body">
+               <div class="float-right btn-group btn-group-sm">
+                  <a (click)="onOpenModall(scategorie, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                  <a (click)="onOpenModall(scategorie, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    -- Add Employee Modal --
+    <div class="modal fade" id="addScategorieModal" tabindex="-1" role="dialog" aria-labelledby="addScategorieModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           <div class="modal-header">
+              <h5 class="modal-title" id="addScategorieModalLabel">Add Scategorie</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+           </div>
+           <div class="modal-body">
+              <form #addForm="ngForm" (ngSubmit)="onAddScategorie(addForm)">
+              <div class="form-group">
+                 <label for="name">Name</label>
+                 <input type="text" ngModel name="nom" class="form-control" id="nom" placeholder="Name" required>
+              </div>
+              
+              
+              
+              
+              
+              <div class="modal-footer">
+                 <button type="button" id="add-scategorie-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+              </div>
+              </form>
+           </div>
+        </div>
+      </div>
+      </div>
+    
+    -- Edit Modal --
+    <div class="modal fade" id="updateScategorieModal" tabindex="-1" role="dialog" aria-labelledby="scategorieEditModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="updateScategorieModalLabel">Edit Sategorie {{editScategorie?.nom}}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form #editForm="ngForm">
+                  <div class="form-group">
+                     <label for="name">Name</label>
+                     <input type="text" ngModel="{{editScategorie?.nom}}" name="nom" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Name">
+                  </div>
+                  <input type="hidden" ngModel="{{editScategorie?.id}}" name="id" class="form-control" id="id" placeholder="Email">
+                  
+                  
+                  
+                
+                  <div class="modal-footer">
+                     <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                     <button (click)="onUpdateScategorie(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    -- Delete Modal --
+    <div class="modal fade" id="deleteScategorieModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="deleteModelLabel">Delete Scategorie</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <p>Are you sure you want to delete the scategorie {{deleteScategorie?.nom}}?</p>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                  <button (click)="onDeleteScategorie(deleteScategorie?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>-->
+    <!--/div-->
+    
+    <!-- Notification for no employees
+    <div *ngIf="categorie?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">NO Client!</h4>
+      <p>No Client were found.</p>
+    </div>
+    </div> 
+    </div>
+    
+    <hr>
+<br><br>-->
+
+
+<!--div class="container home-products"  >
+    <h1 data-qa="title-all-products" class="boxed-title" >Toutes les pièces auto</h1>
+    <div  class="listnav-container">
+  
+      <div class="listnav subcat" >
+        <div>
+        <h2>
+          <a href="#">{{categorie.name}}</a></h2>
+        <span title="Pièces moteur" class="sprite-category-702538">
+  
+        </span>
+      </div>
+      <ul class="unstyled" *ngFor="let scat of scategories">
+        <li>
+          <a class="ico-chevron-right icosize-small">{{scat.name}}</a>
+     
+              </li>
+  
+              
+              </ul></div>
+           
+    
+            </div>
+  </div-->
+
+  
+<mat-tab-group mat-align-tabs="center" class="main-tabs__tab">
+    <mat-tab class="active" label="Meilleures catégories">
+
+        <div class="main-tabs__content main-tab-1">
+            <div class="main-tabs__slider" data-main-tabs-slider>
+                            <div class="main-tabs__slider-item" *ngFor="let categorie of categories">
+                                   
+                                            <div class="catalog-grid-item undefined">
+                                <a class="catalog-grid-item__link" href="#">
+                                    <div class="catalog-grid-item__image">
+                                        <img alt="Disques de Frein"
+                                        class="lazyload"  src="{{categorie.image}}">                                    </div>
+                                    <div class="catalog-grid-item__name" data-catalog-item-name>
+                                        <span class="user-subhead">{{categorie.nom}}</span>
+                                    </div>
+                                </a>
+                            </div>
+                                    </div>
+
+
+                              
+                                   
+                           
+                           
+                            
+                            
+                           
+                           
+                          
+                    </div>
+            
+        </div>
+
+
+ </mat-tab>
+
+ <mat-tab class="active" label="Meilleures catégories">
+
+    <div class="main-tabs__content main-tab-1"  >
+        <div class="main-tabs__slider" data-main-tabs-slider>
+                        <div class="main-tabs__slider-item" *ngFor="let scategorie of scategories">
+                               
+                                        <div class="catalog-grid-item undefined">
+                            <a class="catalog-grid-item__link" href="#">
+                                <div class="catalog-grid-item__image">
+                                    <img alt="Disques de Frein"
+                                    class="lazyload"  src="../assets/images/18.png">                                    </div>
+                                <div class="catalog-grid-item__name" data-catalog-item-name>
+                                    <span class="user-subhead">{{scategorie.nom}}</span>
+                                </div>
+                            </a>
+                        </div>
+                                </div>
+
+
+                          
+                               
+                       
+                       
+                        
+                        
+                       
+                       
+                      
+                </div>
+        
+    </div>
+
+
+</mat-tab>
+</mat-tab-group>
+  
+  
+  

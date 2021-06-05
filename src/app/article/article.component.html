@@ -1,0 +1,401 @@
+
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>code_article</span></th>
+                                <th><span>nom</span></th>
+                                <th><span>description</span></th>
+                                <th><span>prix</span></th>
+                                <th><span>remise</span></th>
+
+                                <th><span>Sategorie</span></th>
+                                <th><span>action</span></th>
+                                
+
+
+
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let article of articles">
+                                    <td>
+                                        <a href="#" class="scategorie-link">{{article.codeArticle}} </a>
+                                        <span class="user-subhead">{{article.nom}}</span>
+                                    </td>
+                                    <td>
+                                        
+                                        <span class="user-subhead">{{article.description}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="user-subhead">{{article.prix}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="user-subhead">{{article.remise}}</span>
+                                    </td>
+                                    
+                                    
+                                    
+                                    <!--option *ngFor="let item of CategorieList" value="{{item.id}}">{{item.nom}}</option-->
+
+                                        <!--td>
+                                            
+                                            <span class="label label-default">{{categorie.categorie.id}}</span>
+                                        </td-->
+                                        <td style="width: 20%;"><a href="#" class="user-link">{{article.scategorie.nom}} </a>
+                                        </td>
+
+                                        <td style="width: 20%;">
+                                        <!--a    (click)="onOpenModal(categorie, 'edit')" class="btn">
+                                           <span>
+                                                <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                            </span>
+                                        </a-->
+
+                                        <a (click)="onOpenModal(article, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
+                                            <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                        </a>
+
+  
+            
+                       
+                                        <!--a (click)="onOpenModal(scategorie, 'delete')" class="table-link danger"-->
+                                            <a (click)="onOpenModal(article, 'delete')" class="btn">
+
+                                            <span>
+                                                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
+                                            </span>
+                                        </a>
+
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="pricing-header mx-auto">
+    <div class="table-responsive">
+     <table class="table table-bordered table-responsive-sm table-responsive-md
+    table-responsive-lg">
+     <thead>
+     <tr>
+     <th scope="col">code_article</th>
+     <th scope="col">nom</th>
+     <th scope="col">description</th>
+     <th scope="col">prix</th>
+     <th scope="col">remise</th>
+     <th scope="col">Sategorie</th>
+     <th scope="col">Action</th>
+
+ </tr>
+     </thead>
+     <tbody>
+ 
+        <tr *ngFor="let article of articles">
+            <td>
+                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                <span class="user-subhead">{{article.codeArticle}}</span>
+            </td>
+            <td>
+                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                <span class="user-subhead">{{article.nom}}</span>
+            </td>
+            <td>
+                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                <span class="user-subhead">{{article.description}}</span>
+            </td>
+            <td>
+                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                <span class="user-subhead">{{article.prix}}</span>
+            </td>
+            <td>
+                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                <span class="user-subhead">{{article.remise}}</span>
+            </td>
+            
+            <td>
+                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                <span class="user-subhead">{{article.scategorie.nom}}</span>
+            </td>
+
+     
+    
+     <td>
+        <a (click)="onOpenModal(article, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
+            <i  style='font-size:20px' class='fas fa-user-edit '></i>
+        </a>
+    
+        <a (click)="onOpenModal(article, 'delete')" class="btn">
+
+            <span>
+                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
+            </span>
+        </a>
+
+        
+    </td>
+        </tr>
+          </tbody>
+          </table>
+          </div>
+        </div>
+
+<!------------------------------------------------------------------------->
+
+
+<div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+ 
+        <div class="container-fluid">
+ 
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-holder">
+                        <h1 class="main-title float-left">Articles</h1>
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active">Articles</li>
+                        </ol>
+                        <div class="clearfix"></div>
+                        
+ 
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            
+ 
+ 
+ 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <span class="pull-right">
+                                <h3>
+                                    <i class="far fa-user"></i> All Articles</h3>
+                                    <form class="form-inline my-2 my-lg-0">
+                                        <input type="search" (ngModelChange)="searchArticles(key.value)" #key="ngModel" ngModel
+                                         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search articles..." required>
+                                     </form>
+                                <button class="btn btn-primary btn-sm" (click)="onOpenModal(null, 'add')" data-toggle="modal" data-target="#modal_add_article">
+                                    <i class="fas fa-user-plus" aria-hidden="true"></i> Add new article</button>
+                                   
+                            </span>
+                           
+                            
+                                
+                             </div>
+                        
+                        <!-- end card-header -->
+                      </div>
+                    <!-- end card -->
+ 
+                </div>
+                <!-- end col -->
+ 
+            </div>
+            <!-- end row -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        </div>
+        <!-- END container-fluid -->
+ 
+    </div>
+    <!-- END content -->
+ 
+ </div>
+ <!-- END content-page -->
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" id="main-container">
+    
+    
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addArticleModal" tabindex="-1" role="dialog" aria-labelledby="addArticleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           <div class="modal-header">
+              <h5 class="modal-title" id="addArticleModalLabel">Add Article</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+           </div>
+           <div class="modal-body">
+              <form #addForm="ngForm" (ngSubmit)="onAddArticle(addForm)">
+                <input type="hidden"  formControlName="id" id="id">
+
+              <div class="form-group">
+                 <label for="name">Code</label>
+                 <input type="text" ngModel name="codeArticle" class="form-control" id="codeArticle" placeholder="Name" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" ngModel name="nom" class="form-control" id="nom" placeholder="Name" required>
+             </div>
+             <div class="form-group">
+                <label for="name">Description</label>
+                <input type="text" ngModel name="description" class="form-control" id="description" placeholder="Name" required>
+             </div>
+             <div class="form-group">
+                <label for="name">Prix</label>
+                <input type="text" ngModel name="prix" class="form-control" id="prix" placeholder="Name" required>
+             </div>
+             <div class="form-group">
+                <label for="name">Remise</label>
+                <input type="text" ngModel name="remise" class="form-control" id="remise" placeholder="Name" required>
+             </div>
+
+            
+            
+
+             <div class="form-group">
+                <label for="exampleInputEmail1" >Picture Url</label>
+                <input type="text" class="form-control" ngModel name="image" id="image">
+              </div>
+
+
+
+              <div class="form-group">
+                <label>Scatégorie </label>
+                <select class="form-control" ngModel name="id" id="id_scategorie">
+                <option value="0">-Select-</option>
+                <option *ngFor="let item of ScategorieList" class="form-control" value="{{item.id}}">{{item.nom}}</option>
+            </select>
+               
+              </div>
+
+              <!--div class="form-group">
+                <label for="id_categorie">idcat</label>
+                <input type="text" ngModel name="id_categorie" class="form-control" id="id_categorie" placeholder="Name" required>
+             </div-->
+             <!--div class="form-group">
+                                     
+                <input type="file"  accept="image/*" (change)="onSelectFile($event)" multiple  id="exampleInputFile" />
+                <div style="display: inline-block;" *ngFor="let imgURL of imgURL">
+                <img [src]="imgURL" height="200" width="200" *ngIf="imgURL"></div>
+              </div-->
+              
+              
+              
+              <div class="modal-footer">
+                 <button type="button" id="add-article-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+              </div>
+              </form>
+           </div>
+        </div>
+      </div>
+      </div>
+    
+    <!-- Edit Modal 
+    <div class="modal fade" id="updateArticleModal" tabindex="-1" role="dialog" aria-labelledby="articleEditModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="updateArticleModalLabel">Edit Article {{editScategorie?.nom}}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form #editForm="ngForm">
+                  <div class="form-group">
+                     <label for="name">Name</label>
+                     <input type="text" ngModel="{{editScategorie?.nom}}" name="nom" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Name">
+
+
+
+                  </div>
+                  <input type="hidden" ngModel="{{editScategorie?.id}}" name="id" class="form-control" id="id" placeholder="Email">
+                 
+                  
+
+
+
+                  <div class="form-group">
+                <label>Catégorie </label>
+                <select class="form-control" ngModel name="id" id="id_categorie">
+                <option value="0">-Select-</option>
+                <option *ngFor="let item of CategorieList" class="form-control" value="{{item.id}}">{{item.nom}}</option>
+            </select>
+               
+              </div>
+                
+                  <div class="modal-footer">
+                     <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                     <button (click)="onUpdateScategorie(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+    </div>-->
+    
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteArticleModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="deleteModelLabel">Delete Article</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <p>Are you sure you want to delete the article {{deleteArticle?.nom}}?</p>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                  <button (click)="onDeleteArticle(deleteArticle?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+    <!--/div-->
+    
+     
+    </div>
+    
+    <hr>
+<br><br>

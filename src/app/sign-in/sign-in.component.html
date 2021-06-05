@@ -1,0 +1,110 @@
+<!--
+<div class="container"> 
+  
+ <div class="line"></div>
+    <div class="conntect-compte-section" style="margin-bottom: 10%;">
+    <h1 class="section-compte-title" style="margin-top: 12%;">Se connecter </h1>
+    <form #loginform="ngForm"  (ngSubmit)="loginUser()" >
+    <small class="text-danger">{{message}}</small>
+      <div class="form-group">
+        <input type="email" class="form-control"  name="email" placeholder="Email" [(ngModel)]="user.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+
+        #email="ngModel" 
+       [class.is-invalid]="email.invalid && email.touched"  >-->
+       <!-- <small class="text-danger" [class.d-none]="email.valid ||email.untouched" >email is required</small> -->
+       <!--
+       <div *ngIf="email.errors && (email.invalid && email.touched)">
+         <small class="text-danger" *ngIf="email.errors.required">Email is required field</small>
+         <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid email</small>
+
+      </div>
+      
+       <input type="password" class="form-control"   name="password" placeholder="Mot de passe"  [(ngModel)]="user.password" required
+       #password="ngModel"
+       [class.is-invalid]="password.invalid && password.touched"  >
+       <small class="text-danger" [class.d-none]="password.valid ||password.untouched" >password is required</small>
+
+    </div>
+    <a href="#"><p class="mdp-oublié"> Mot de passe oublié ?</p> </a>
+    <input  [disabled]="loginform.form.invalid" type="submit" value="Se connecter"  />    
+    <p class="ou-connecxion"> Ou se connecter avec </p>-->
+    
+     <!-- <a href="#" class="btn border-gray m-1"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="btn border-gray m-1"><i class="fab fa-google"></i></a> -->
+    <!--
+    <a href="/register" class="btn-compte border-gray m-1">New user ? Register here</a>
+
+    
+    
+  </form>
+ 
+ 
+</div>
+ 
+  
+ 
+</div>
+-->
+
+<!-- Login End -->
+
+<div class="overlay" style="display: block;"></div>
+<div class="popup-login login-popup-js" style="display: block;">
+<div class="popup-login__close" > 
+<i class="material-icons ">close</i>
+</div>
+
+<div class="popup-login__icon">
+<i class="material-icons">person</i>    </div>
+<div class="popup-login__title">Connexion</div>
+<div class="popup-login__description">Entrez votre adresse e-mail et votre mot de passe</div>
+
+<form #loginform="ngForm"  (ngSubmit)="loginUser()" >
+  <small class="text-danger">{{message}}</small>
+
+  <div class="popup-login__row">
+  <!--input name="Email" id="login_top_email" type="text" placeholder="E-mail"-->
+
+  <input type="email" class="form-control"  name="email" placeholder="Email" [(ngModel)]="user.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+
+  #email="ngModel" 
+ [class.is-invalid]="email.invalid && email.touched"  >
+ <div *ngIf="email.errors && (email.invalid && email.touched)">
+  <small class="text-danger" *ngIf="email.errors.required">Email is required field</small>
+  <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid email</small>
+
+</div>
+
+
+</div>
+<div class="popup-login__row">
+  <!--input type="password" name="Password" placeholder="Mot de passe"-->
+  <input type="password" class="form-control"   name="password" placeholder="Mot de passe"  [(ngModel)]="user.password" required
+  #password="ngModel"
+  [class.is-invalid]="password.invalid && password.touched"  >
+  <small class="text-danger" [class.d-none]="password.valid ||password.untouched" >password is required</small>
+
+
+  <input  [disabled]="loginform.form.invalid" type="submit" value="Se connecter" class="popup-login__button" />    
+
+</div>
+
+<!--div class="popup-login__forgot">
+  
+  <div class="forgot">
+      <a href="#" class="versegen"><span>Vous avez oublié votre mot de passe?</span></a>
+  </div>
+</div-->
+<!--div class="popup-login__button">
+  <a href="#" class="submit" value="Se connecter">Se connecter</a>
+
+</div-->
+
+
+
+
+<div class="popup-login__register">
+  Si vous ne disposez pas d'un compte , <a href="/register" id="reg_pop">inscrivez-vous</a> maintenant.        </div>
+</form>
+
+</div>

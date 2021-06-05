@@ -1,0 +1,150 @@
+<!--div id="wrapper">
+
+<div id="content" class="contact-page">
+    <div class="w_cont">
+        
+        <div class="left_col">
+            <div class="wrapper-contact-page">
+                <div class="contact-page__form">
+    <form id="contact_page_callback_form"  accept-charset="utf-8">   
+         <input hidden="1" name="content-tab" value="order" type="text" id="form_content-tab">   
+          <div class="contact-page__form-title">Pour accélérer le traitement de votre demande, veuillez remplir le formulaire.</div>
+    
+    
+            <div class="tab-content">
+            
+            <div class="contact-page__form-tab ">
+                <div class="contact-page__form-content " style="display: block;">
+                    <div class="contact-page__form-row">
+                        <label>Votre Prénom               
+                             <input name="Order[orderId]" value="" type="text" id="form_Order[orderId]"/>      
+                                  </label>
+                                  <label>Saisissez votre numéro de téléphone        
+                                    <div class="country-code">
+                                                <input type="hidden" id="default_phone_code" value="33">
+                                <input name="default_order_reason" id="default_order_reason" value="4" type="hidden"/>  
+                                                  <input name="default_orderless_reason" id="default_orderless_reason" value="7" type="hidden">                
+                                                      <input maxlength="15" name="Order[phone]" value="" type="text" id="form_Order[phone]"/>  
+                                                                  </div>
+                        </label>
+                        <div class="contact-page__form-error" data-name="error_Order[phone]" style="display: none;">
+                            Merci d'indiquer votre numéro de téléphone         
+                           </div>
+                           <label>
+                            E-mail                <input placeholder="example@mail.com" name="Order[email]" value="" type="text" id="form_Order[email]">      
+                                      <div class="contact-page__form-error" data-name="error_Order[email]" style="display: none;">
+                                Le champ E-mail est obligatoire et doit contenir une valeur.                </div>
+                        </label>
+                    </div>
+                    
+                    <div class="contact-page__form-row">
+                        
+                    </div>
+            
+                    
+                    <div class="contact-page__form-row">
+                        <label>
+                            Veuillez décrire brièvement le problème        
+                                    <textarea name="Order[comment]" id="form_Order[comment]"></textarea>            </label>
+                    </div>
+                    <div class="contact-page__form-row">
+                        <button name="request_callback">Envoyer</button>        </div>
+                </div>
+            </div>
+
+
+
+        
+        
+        
+    </div>
+
+
+    
+  </form>
+</div>      
+
+
+
+<div class="contact-page__info">
+                    <div class="contact-page__info-title">Les contacts</div>
+                        <div class="contact-page__info-description">
+                                           Heures de travail du service clients <br>Lundi - vendredi 8:00 - 18:00                                                           
+                             <br>Samedi 8:00 - 12:00                 
+                        </div>
+                    <div class="contact-page__info-adress">AVENUE AZZOUZ BOUKHRIS<br>SAHLOUL 3<br>SOUSSE</div>
+                    <div class="contact-page__info-email"><b>E-mail:</b> iheb@gmail.com</div>
+                    <div class="contact-page__info-site"><b>Web:</b> www.ihebauto.com</div>
+                    <div class="contact-page__info-fax"><b>Phone:</b>+216 24 319 840</div>
+                </div>
+            </div>
+        </div>
+
+    </div-->
+
+    
+
+    <section class="contact-page-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				
+				<!--Form Column-->
+				<div class="form-column col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-column">
+						<h2>Pour accélérer le traitement de votre demande, veuillez remplir le formulaire.</h2>
+						
+						<!--Contact Form-->
+						<div class="contact-form">
+
+							<form method="post" action="sendemail.php" id="contact-form">
+								<div class="row clearfix">
+									<div class="form-group col-lg-6 col-md-6 col-sm-12">
+										<input type="text" name="name" value="" placeholder="Prénom" required>
+									</div>
+									<div class="form-group col-lg-6 col-md-6 col-sm-12">
+										<input type="email" name="email" value="" placeholder="Email" required>
+									</div>
+									
+									
+									<div class="form-group col-lg-12 col-md-12 col-sm-12">
+										<textarea name="message" placeholder="Veuillez décrire brièvement le problème"></textarea>
+									</div>
+									<div class="form-group col-lg-12 col-md-12 col-sm-12">
+										<button type="submit" class="theme-btn btn-style-two">Submit</button>
+                                    </div>
+								</div>
+							</form>
+                            
+						</div>
+						
+					</div>
+				</div>
+				
+				<!--Map Column-->
+				<div class="map-column col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-column">
+						
+						<!--Map Info Section-->
+						<section class="map-section">
+
+							<!--Map Canvas-->
+							<div class="map-canvas"
+								data-zoom="12"
+								data-lat="35.829778"
+								data-lng="10.589801"
+								data-type="roadmap"
+								data-hue="#ffc400"
+								
+								data-icon-path="images/icons/map-marker.png"
+								data-content="Rue AZZOUZ BOUKHRIS SAHLOUL, Sousse<br><a href='mailto:info@youremail.com'>iheb.chargui123@gmail.com</a>">
+							</div>
+
+						</section>
+						<!--End Map Info Section-->
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>

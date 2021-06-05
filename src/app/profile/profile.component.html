@@ -1,0 +1,93 @@
+<div class="container bootstrap snippets bootdey">
+    <div class="row ng-scope">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    <div class="pv-lg"><img class="center-block img-responsive img-circle  thumb96"  src="{{this.url+this.loggedUser}}" alt="Contact"></div>
+                    <h3 class="m0 text-bold">{{user.nom}} {{user.prenom}}</h3>
+                   
+                    <div class="text-center"><a class="btn btn-primary" href="">Send message</a></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="pull-right">
+                        <div class="btn-group dropdown" uib-dropdown="dropdown">
+                            <button class="btn btn-link dropdown-toggle" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><em class="fa fa-ellipsis-v fa-lg text-muted"></em></button>
+                            <ul class="dropdown-menu dropdown-menu-right animated fadeInLeft" role="menu">
+                                <li><a href=""><span>Send by message</span></a></li>
+                                <li><a href=""><span>Share contact</span></a></li>
+                                <li><a href=""><span>Block contact</span></a></li>
+                                <li><a href=""><span class="text-warning">Delete contact</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="h4 text-center">Contact Information</div>
+                    <div class="row pv-lg">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            <form class="form-horizontal ng-pristine ng-valid" #loginform="ngForm" (ngSubmit)="submit()">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact1">Name</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact1" type="text" placeholder="" name="nom" [(ngModel)]="user.nom">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact4">prenom</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" name="prenom" id="inputContact4" type="text" name="prenom"  [(ngModel)]="user.prenom">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact2">Email</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact2" disabled type="email" name="email" [(ngModel)]="user.emailId" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact3">Phone</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact3" type="text" name="telephone" [(ngModel)]="user.telephone">
+                                    </div>
+                                </div>
+                                
+                              
+                            
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact7">address</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" name="address" id="inputContact7"  type="text" [(ngModel)]="user.adresse">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact8">codePostal</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact8" type="text" name="codePostal" [(ngModel)]="user.codePostal" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Favorite contact?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button class="btn btn-info" type="submit" value="update">update</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-right"><a class="text-muted" href="#">Delete this contact?</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,161 @@
+<div class="container"> 
+   
+   <div class="line" ></div>
+      <div class="conntect-compte-section" style="margin-bottom: 10%;">
+       <h1 class="section-compte-title">Créer votre compte </h1>
+       <form #loginform="ngForm"  (ngSubmit)="register()" >
+         <small class="text-danger">{{message}}</small>
+        <div class="form-group">
+          <input type="text" class="form-control"  name="nom" placeholder="Nom" [(ngModel)]="user.nom" required 
+          #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched"  >
+          <div *ngIf="nom.errors && (nom.invalid && nom.touched)">
+           <small class="text-danger" *ngIf="nom.errors.required">Nom is required field</small>
+   
+        </div>
+        <input type="text" class="form-control"  name="prenom" placeholder="Prénom" [(ngModel)]="user.prenom" required 
+        #prenom="ngModel" [class.is-invalid]="prenom.invalid && prenom.touched"  >
+        <div *ngIf="prenom.errors && (prenom.invalid && prenom.touched)">
+         <small class="text-danger" *ngIf="prenom.errors.required">Prénom is required field</small>
+ 
+      </div>
+        <input type="email" class="form-control"  name="emailId" placeholder="Email" [(ngModel)]="user.emailId" required pattern="^\w+[a-zA-Z._]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+         #emailId="ngModel" [class.is-invalid]="emailId.invalid && emailId.touched"  >
+         <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
+          <small class="text-danger" *ngIf="emailId.errors.required">Email is required field</small>
+          <small class="text-danger" *ngIf="emailId.errors.pattern">Enter the valid email</small>
+ 
+       </div>
+        <input type="password" class="form-control"   name="password" placeholder="Mot de passe"  [(ngModel)]="user.password" required
+       #password="ngModel"
+       [class.is-invalid]="password.invalid && password.touched"  >
+       <div *ngIf="password.errors && (password.invalid && password.touched)">
+       <small class="text-danger" [class.d-none]="password.valid ||password.untouched" >password is required</small>
+       </div>
+ 
+        <input type="password" class="form-control"   name="cp" placeholder="Enter Confirm Password"  (ngModel)="user.password" required
+       #confirmPassword="ngModel"
+       [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"  >
+        <small class="text-danger" [class.d-none]="confirmPassword.value == password.value || confirmPassword.untouched" >confirm Password is invalid</small>
+ 
+        <input type="text" class="form-control"  name="telephone" placeholder="Téléphone mobile (+216)" [(ngModel)]="user.telephone" required 
+        #telephone="ngModel" [class.is-invalid]="telephone.invalid && telephone.touched"  >
+        <div *ngIf="telephone.errors && (telephone.invalid && telephone.touched)">
+         <small class="text-danger" *ngIf="telephone.errors.required">telephone is required field</small>
+  
+      </div>
+      <input type="text" class="form-control"  name="adresse" placeholder="Adresse" [(ngModel)]="user.adresse" required 
+      #adresse="ngModel" [class.is-invalid]="adresse.invalid && adresse.touched"  >
+      <div *ngIf="adresse.errors && (adresse.invalid && adresse.touched)">
+       <small class="text-danger" *ngIf="adresse.errors.required">Adresse is required field</small>
+
+    </div>
+       <input type="text" class="form-control"  name="codePostal" placeholder="Code Postal" [(ngModel)]="user.codePostal" required 
+        #codePostal="ngModel" [class.is-invalid]="codePostal.invalid && codePostal.touched"  >
+        <div *ngIf="codePostal.errors && (codePostal.invalid && codePostal.touched)">
+         <small class="text-danger" *ngIf="codePostal.errors.required">Code Postal is required field</small>
+ 
+      </div>
+      <div class="form-group">
+         <label for="exampleInputFile">File input</label>
+         <input type="file"  accept="image/*" (change)="onSelectFile($event)" multiple  id="exampleInputFile" />
+         <div style="display: inline-block;" *ngFor="let imgURL of imgURL">
+         <img [src]="imgURL" height="200" width="200" *ngIf="imgURL"></div>
+         <p class="help-block">Example block-level help text here.</p>
+       </div>
+       </div>
+       <p class="float-right" id="reg" [routerLink]="['/login']">Existing user ? Login here</p>
+
+        <input   type="submit"  value="Créer votre compte" />
+      </form>
+   </div>
+   </div>
+
+
+   <div class="overlay" style="display: block;"></div>
+<div class="popup-registration register-js" style="display: block;">
+    <div class="popup-registration__close">
+        <i class="material-icons">close</i>
+    </div>
+    <div class="popup-registration__icon">
+        <i class="material-icons">person</i>     </div>
+    <div class="popup-registration__title">Vous êtes un nouveau client?</div>
+    <div class="popup-registration__description"></div>
+    
+    <form #loginform="ngForm"  (ngSubmit)="register()" >
+      <small class="text-danger">{{message}}</small>
+
+
+    <div class="popup-registration__row">
+   
+      
+       <input type="text" class="form-control"  name="nom" placeholder="Nom" [(ngModel)]="user.nom" required 
+       #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched"  >
+       <div *ngIf="nom.errors && (nom.invalid && nom.touched)">
+        <small class="text-danger" *ngIf="nom.errors.required">Nom is required field</small>
+
+     </div>
+    
+     <input type="text" class="form-control"  name="prenom" placeholder="Prénom" [(ngModel)]="user.prenom" required 
+     #prenom="ngModel" [class.is-invalid]="prenom.invalid && prenom.touched"  >
+     <div *ngIf="prenom.errors && (prenom.invalid && prenom.touched)">
+      <small class="text-danger" *ngIf="prenom.errors.required">Prénom is required field</small>
+
+   </div>
+     <input type="email" class="form-control"  name="emailId" placeholder="Email" [(ngModel)]="user.emailId" required pattern="^\w+[a-zA-Z._]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+      #emailId="ngModel" [class.is-invalid]="emailId.invalid && emailId.touched"  >
+      <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
+       <small class="text-danger" *ngIf="emailId.errors.required">Email is required field</small>
+       <small class="text-danger" *ngIf="emailId.errors.pattern">Enter the valid email</small>
+
+    </div>
+     <input type="password" class="form-control"   name="password" placeholder="Mot de passe"  [(ngModel)]="user.password" required
+    #password="ngModel"
+    [class.is-invalid]="password.invalid && password.touched"  >
+    <div *ngIf="password.errors && (password.invalid && password.touched)">
+    <small class="text-danger" [class.d-none]="password.valid ||password.untouched" >password is required</small>
+    </div>
+
+     <input type="password" class="form-control"   name="cp" placeholder="Enter Confirm Password"  (ngModel)="user.password" required
+    #confirmPassword="ngModel"
+    [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"  >
+     <small class="text-danger" [class.d-none]="confirmPassword.value == password.value || confirmPassword.untouched" >confirm Password is invalid</small>
+
+     <input type="text" class="form-control"  name="telephone" placeholder="Téléphone mobile (+216)" [(ngModel)]="user.telephone" required 
+     #telephone="ngModel" [class.is-invalid]="telephone.invalid && telephone.touched"  >
+     <div *ngIf="telephone.errors && (telephone.invalid && telephone.touched)">
+      <small class="text-danger" *ngIf="telephone.errors.required">telephone is required field</small>
+
+   </div>
+   <input type="text" class="form-control"  name="adresse" placeholder="Adresse" [(ngModel)]="user.adresse" required 
+   #adresse="ngModel" [class.is-invalid]="adresse.invalid && adresse.touched"  >
+   <div *ngIf="adresse.errors && (adresse.invalid && adresse.touched)">
+    <small class="text-danger" *ngIf="adresse.errors.required">Adresse is required field</small>
+
+ </div>
+    <input type="text" class="form-control"  name="codePostal" placeholder="Code Postal" [(ngModel)]="user.codePostal" required 
+     #codePostal="ngModel" [class.is-invalid]="codePostal.invalid && codePostal.touched"  >
+     <div *ngIf="codePostal.errors && (codePostal.invalid && codePostal.touched)">
+      <small class="text-danger" *ngIf="codePostal.errors.required">Code Postal is required field</small>
+
+   </div>
+
+  
+      <input   type="file"  accept="image/*" (change)="onSelectFile($event)" multiple  id="exampleInputFile" />
+      <div style="display: inline-block;" *ngFor="let imgURL of imgURL">
+      <img [src]="imgURL" height="50" width="200" *ngIf="imgURL">
+   </div>
+    
+
+
+    
+   
+</div>
+
+   <!--a href="#" class="register_submit">S'inscrire</a-->
+   <input class="register_submit"  type="submit"  value="Créer votre compte"  class="popup-registration__button"/>
+
+ 
+    </form>
+    
+</div>
+
