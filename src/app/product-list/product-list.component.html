@@ -1,0 +1,76 @@
+<section class="section-two-columns">
+    <div class="container">
+        <div class="row-fluid">
+            
+            <div class="span9 ">
+                <div class="page-content">
+                    <div class="products-page-head">
+                        <h1>{{articles.nom}},{{articles.scategorie.nom}}</h1>
+                        
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span7">
+                            <div class="flexslider product-gallery">
+                                <ul class="slides">
+                                    <li data-thumb="../../assets/images/55.png">
+                                        <img alt=""  src="{{articles.image}}" />
+                                    </li> 
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="product-info-box">
+                                
+                                <hr>
+                                <div class="info-holder">
+                                    <h4>{{articles.codeArticle}}</h4>
+                                    <p>
+                                      {{articles.description}}</p>
+                                </div>
+                                <hr>
+                                
+
+                                    <div class="drop-selector">
+                                        <span>Quantité</span>
+                                        <select class="chosen-select">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+
+                                        </select>
+                                    </div>
+                                
+
+                                <hr>
+                                <div class="price-holder">
+                                    <div class="price">
+                                        <span>{{articles.prix}}DT</span>
+                                    </div>
+                                </div>
+                                <div class="buttons-holder">
+                                    <a class="cusmo-btn add-button" href="#">ajouter au panier</a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    
+                   
+                     
+                     
+                </div>
+            </div>
+        </div>
+         </div>
+</section>
+<br><br><br><br><br>

@@ -1,162 +1,3 @@
-
-<div class="container bootstrap snippets bootdey">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="main-box no-header clearfix">
-                <div class="main-box-body clearfix">
-                    <div class="table-responsive">
-                        <table class="table user-list">
-                            <thead>
-                                <tr>
-                                <th><span>code_article</span></th>
-                                <th><span>nom</span></th>
-                                <th><span>description</span></th>
-                                <th><span>prix</span></th>
-                                <th><span>remise</span></th>
-
-                                <th><span>Sategorie</span></th>
-                                <th><span>action</span></th>
-                                
-
-
-
-                                <th>&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let article of articles">
-                                    <td>
-                                        <a href="#" class="scategorie-link">{{article.codeArticle}} </a>
-                                        <span class="user-subhead">{{article.nom}}</span>
-                                    </td>
-                                    <td>
-                                        
-                                        <span class="user-subhead">{{article.description}}</span>
-                                    </td>
-                                    <td>
-                                        <span class="user-subhead">{{article.prix}}</span>
-                                    </td>
-                                    <td>
-                                        <span class="user-subhead">{{article.remise}}</span>
-                                    </td>
-                                    
-                                    
-                                    
-                                    <!--option *ngFor="let item of CategorieList" value="{{item.id}}">{{item.nom}}</option-->
-
-                                        <!--td>
-                                            
-                                            <span class="label label-default">{{categorie.categorie.id}}</span>
-                                        </td-->
-                                        <td style="width: 20%;"><a href="#" class="user-link">{{article.scategorie.nom}} </a>
-                                        </td>
-
-                                        <td style="width: 20%;">
-                                        <!--a    (click)="onOpenModal(categorie, 'edit')" class="btn">
-                                           <span>
-                                                <i  style='font-size:20px' class='fas fa-user-edit '></i>
-                                            </span>
-                                        </a-->
-
-                                        <a (click)="onOpenModal(article, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
-                                            <i  style='font-size:20px' class='fas fa-user-edit '></i>
-                                        </a>
-
-  
-            
-                       
-                                        <!--a (click)="onOpenModal(scategorie, 'delete')" class="table-link danger"-->
-                                            <a (click)="onOpenModal(article, 'delete')" class="btn">
-
-                                            <span>
-                                                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
-                                            </span>
-                                        </a>
-
-
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="pricing-header mx-auto">
-    <div class="table-responsive">
-     <table class="table table-bordered table-responsive-sm table-responsive-md
-    table-responsive-lg">
-     <thead>
-     <tr>
-     <th scope="col">code_article</th>
-     <th scope="col">nom</th>
-     <th scope="col">description</th>
-     <th scope="col">prix</th>
-     <th scope="col">remise</th>
-     <th scope="col">Sategorie</th>
-     <th scope="col">Action</th>
-
- </tr>
-     </thead>
-     <tbody>
- 
-        <tr *ngFor="let article of articles">
-            <td>
-                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
-                <span class="user-subhead">{{article.codeArticle}}</span>
-            </td>
-            <td>
-                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
-                <span class="user-subhead">{{article.nom}}</span>
-            </td>
-            <td>
-                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
-                <span class="user-subhead">{{article.description}}</span>
-            </td>
-            <td>
-                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
-                <span class="user-subhead">{{article.prix}}</span>
-            </td>
-            <td>
-                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
-                <span class="user-subhead">{{article.remise}}</span>
-            </td>
-            
-            <td>
-                <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
-                <span class="user-subhead">{{article.scategorie.nom}}</span>
-            </td>
-
-     
-    
-     <td>
-        <a (click)="onOpenModal(article, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
-            <i  style='font-size:20px' class='fas fa-user-edit '></i>
-        </a>
-    
-        <a (click)="onOpenModal(article, 'delete')" class="btn">
-
-            <span>
-                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
-            </span>
-        </a>
-
-        
-    </td>
-        </tr>
-          </tbody>
-          </table>
-          </div>
-        </div>
-
-<!------------------------------------------------------------------------->
-
-
 <div class="content-page">
 
     <!-- Start content -->
@@ -167,10 +8,14 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb-holder">
-                        <h1 class="main-title float-left">Articles</h1>
+                        <h1 class="main-title float-left">Produit</h1>
                         <ol class="breadcrumb float-right">
-                            <li class="breadcrumb-item">Home</li>
-                            <li class="breadcrumb-item active">Articles</li>
+                            <li class="breadcrumb-item">
+                                <a href="/admin">
+                                <span>Home</span>
+                            </a>
+                            </li>
+                            <li class="breadcrumb-item active">Produits</li>
                         </ol>
                         <div class="clearfix"></div>
                         
@@ -189,7 +34,7 @@
                         <div class="card-header">
                             <span class="pull-right">
                                 <h3>
-                                    <i class="far fa-user"></i> All Articles</h3>
+                                    <i class="far fa-user"></i> All Products</h3>
                                     <form class="form-inline my-2 my-lg-0">
                                         <input type="search" (ngModelChange)="searchArticles(key.value)" #key="ngModel" ngModel
                                          name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search articles..." required>
@@ -214,7 +59,77 @@
             <!-- end row -->
  
  
- 
+            <div class="pricing-header mx-auto">
+                <div class="table-responsive">
+                 <table class="table table-bordered table-responsive-sm table-responsive-md
+                table-responsive-lg">
+                 <thead>
+                 <tr>
+                 <th scope="col">code_article</th>
+                 <th scope="col">nom</th>
+                 <th scope="col">description</th>
+                 <th scope="col">prix</th>
+                 <th scope="col">Quantite</th>
+                 <th scope="col">Sategorie</th>
+                 <th scope="col">Modele</th>
+                 <th scope="col">Action</th>
+            
+             </tr>
+                 </thead>
+                 <tbody>
+             
+                    <tr *ngFor="let article of articles">
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.codeArticle}}</span>
+                        </td>
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.nom}}</span>
+                        </td>
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.description}}</span>
+                        </td>
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.prix}}</span>
+                        </td>
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.quantite}}</span>
+                        </td>
+                        
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.scategorie.nom}}</span>
+                        </td>
+             
+                        <td>
+                            <!--a href="#" class="scategorie-link">{{scategorie.id}} </a-->
+                            <span class="user-subhead">{{article.modele.nom}}</span>
+                        </td>
+                 
+                
+                 <td>
+                    <a (click)="onOpenModal(article, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
+                        <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                    </a>
+                
+                    <a (click)="onOpenModal(article, 'delete')" class="btn">
+            
+                        <span>
+                            <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
+                        </span>
+                    </a>
+            
+                    
+                </td>
+                    </tr>
+                      </tbody>
+                      </table>
+                      </div>
+                    </div>
  
  
  
@@ -282,8 +197,8 @@
                 <input type="text" ngModel name="prix" class="form-control" id="prix" placeholder="Name" required>
              </div>
              <div class="form-group">
-                <label for="name">Remise</label>
-                <input type="text" ngModel name="remise" class="form-control" id="remise" placeholder="Name" required>
+                <label for="name">Quantité</label>
+                <input type="text" ngModel name="quantite" class="form-control" id="quantite" placeholder="quantite" required>
              </div>
 
             
@@ -298,9 +213,18 @@
 
               <div class="form-group">
                 <label>Scatégorie </label>
-                <select class="form-control" ngModel name="id" id="id_scategorie">
+                <select class="form-control" ngModel name="id_scategorie" id="id_scategorie">
                 <option value="0">-Select-</option>
                 <option *ngFor="let item of ScategorieList" class="form-control" value="{{item.id}}">{{item.nom}}</option>
+            </select>
+               
+              </div>
+
+              <div class="form-group">
+                <label>Modele </label>
+                <select class="form-control" ngModel name="id_modele" id="id_modele">
+                <option value="0">-Select-</option>
+                <option *ngFor="let item of ModeleList" class="form-control" value="{{item.id}}">{{item.nom}}</option>
             </select>
                
               </div>
@@ -328,49 +252,76 @@
       </div>
       </div>
     
-    <!-- Edit Modal 
+    <!-- Edit Modal -->
     <div class="modal fade" id="updateArticleModal" tabindex="-1" role="dialog" aria-labelledby="articleEditModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="updateArticleModalLabel">Edit Article {{editScategorie?.nom}}</h5>
+               <h5 class="modal-title" id="updateArticleModalLabel">Edit Article {{editArticle?.nom}}</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
                </button>
             </div>
             <div class="modal-body">
                <form #editForm="ngForm">
+                <div class="form-group">
+                    <label for="name">Code</label>
+                    <input type="text" ngModel="{{editArticle?.codeArticle}}" name="codeArticle" class="form-control" id="codeArticle" placeholder="Name" required>
+                 </div>
+
                   <div class="form-group">
                      <label for="name">Name</label>
-                     <input type="text" ngModel="{{editScategorie?.nom}}" name="nom" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Name">
-
-
-
+                     <input type="text" ngModel="{{editArticle?.nom}}" name="nom" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Name">
                   </div>
-                  <input type="hidden" ngModel="{{editScategorie?.id}}" name="id" class="form-control" id="id" placeholder="Email">
-                 
+                  <input type="hidden" ngModel="{{editArticle?.id}}" name="id" class="form-control" id="id" placeholder="Email">
                   
-
-
+                  <div class="form-group">
+                    <label for="name">Description</label>
+                    <input type="text" ngModel="{{editArticle?.description}}" name="description" class="form-control" id="description" placeholder="Name" required>
+                 </div>
+                 <div class="form-group">
+                    <label for="name">Prix</label>
+                    <input type="text" ngModel="{{editArticle?.prix}}" name="prix" class="form-control" id="prix" placeholder="Name" required>
+                 </div>
+                 <div class="form-group">
+                    <label for="name">Quantite</label>
+                    <input type="text" ngModel="{{editArticle?.quantite}}" name="quantite" class="form-control" id="quantite" placeholder="Name" required>
+                 </div>
+    
+                
+                
+    
+                 <div class="form-group">
+                    <label for="exampleInputEmail1" >Picture Url</label>
+                    <input type="text" class="form-control" ngModel="{{editArticle?.image}}" name="image" id="image">
+                  </div>
 
                   <div class="form-group">
-                <label>Catégorie </label>
-                <select class="form-control" ngModel name="id" id="id_categorie">
-                <option value="0">-Select-</option>
-                <option *ngFor="let item of CategorieList" class="form-control" value="{{item.id}}">{{item.nom}}</option>
-            </select>
-               
-              </div>
+                    <label>Scatégorie </label>
+                    <input type="text" *ngFor="let item of ModeleList" class="form-control" ngModel="{{editArticle?.scategorie.id}}" name="id_scategorie" id="id_scategorie">
+                   
+                  </div>
+    
+                  <div class="form-group">
+                    <label>Modele </label>
+                    <select class="form-control" ngModel name="id_modele" id="id_modele">
+                    
+                    <option *ngFor="let item of ModeleList" class="form-control" value="{{item.id}}">{{item.nom}}</option>
+                </select>
+                   
+                  </div>
+
+                  
                 
                   <div class="modal-footer">
                      <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                     <button (click)="onUpdateScategorie(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                     <button (click)="onUpdateArticle(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
                   </div>
                </form>
             </div>
          </div>
       </div>
-    </div>-->
+    </div>
     
     <!-- Delete Modal -->
     <div class="modal fade" id="deleteArticleModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">

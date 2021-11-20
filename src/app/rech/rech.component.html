@@ -32,6 +32,9 @@
             <div id="maker-select" class="custom-select slt-selectbox-wrapper">
                 <select id="form_maker_id" name="maker_id" class="custom-option-wrapper">
                     <option class="custom-option" value="">Choisissez une marque </option>
+                   
+                        <option *ngFor="let marque of marques">{{marque.nom}}</option>
+                        
                 </select>
             </div>
         </div>
@@ -48,6 +51,7 @@
             <div id="car-select" class="custom-select slt-selectbox-wrapper">
                 <select id="form_car_id" name="car_id" class="custom-option-wrapper">
                     <option class="custom-option" value="">Choisissez une motorisation</option>
+                    
                 </select>
             </div>
         </div>

@@ -39,6 +39,14 @@ import { ArticleComponent } from './article/article.component';
 import { ContainerComponent } from './container/container.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NavComponent } from './admin/nav/nav.component';
+import { MessageComponent } from './admin/message/message.component';
+import { MarqueComponent } from './admin/marque/marque.component';
+import { ModeleComponent } from './admin/modele/modele.component';
+import { ProduitgridComponent } from './produitgrid/produitgrid.component';
+import { FilterComponent } from './filter/filter.component';
+import { CommandeComponent } from './commande/commande.component';
+import { PieceComponent } from './piece/piece.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 const MATERIAL_MODULES = [MatToolbarModule,
   MatIconModule
@@ -68,6 +76,14 @@ const MATERIAL_MODULES = [MatToolbarModule,
     ContainerComponent,
     ProductListComponent,
     NavComponent,
+    MessageComponent,
+    MarqueComponent,
+    ModeleComponent,
+    ProduitgridComponent,
+    FilterComponent,
+    CommandeComponent,
+    PieceComponent,
+    AccueilComponent,
     
   
   ],

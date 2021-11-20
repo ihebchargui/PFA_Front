@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  recherche ;
   loggedUser ; 
   url ; 
   image ;
@@ -46,6 +46,11 @@ export class NavbarComponent implements OnInit {
 
     container.appendChild(button);
     button.click(); }
+    
+    rechercher(){
+      this.router.navigate(['/boutique/piece', { nom: this.recherche }]);
+    
+    }
   
  
 }

@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
 import { ServiceService } from '../service/service.service';
 import {Router} from '@angular/router' ; 
 import { FormBuilder,Validators } from '@angular/forms';
@@ -125,6 +122,7 @@ export class BoutiqueComponent implements OnInit {
   }
   getfromlocal(){
    this.listData=JSON.parse(localStorage.getItem('produits'));
+   
    this.listDataFilter=this.listData;
   }
   getData() {

@@ -1,5 +1,6 @@
 .main-tabs__tab{text-align:center;position:relative}@media (max-width:575px){
-    .main-tabs__tab{margin:0 20px 0 0}}@media (max-width:575px){
+    .main-tabs__tab{margin:0 20px 0 0}}
+    @media (max-width:575px){
     .main-tabs__tab.main-tabs__tab--scroll-off:before{display:none}}
     .main-tabs__tab:before{display:none;content:"";
     width:10px;height:10px;border-right:2px solid #ccc;border-bottom:2px solid #ccc;transform:rotate(-45deg);position:absolute;right:-15px;top:50%;

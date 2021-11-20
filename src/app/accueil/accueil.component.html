@@ -1,0 +1,46 @@
+<section class="featured-section">
+    <div class="auto-container">
+        <!--Sec Title-->
+        <div class="sec-title centered">
+            <h2>Sélection de pièces auto</h2>
+        </div>
+        <div class="row clearfix">
+            
+            <!--Featured Block-->
+            <div class="featured-block col-lg-3 col-md-6 col-sm-12" *ngFor="let article of articles">
+                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="image">
+                        <a [routerLink]="['/boutique', article.id, 'details']"><img src="{{article.image}}" alt="" /></a>
+                    </div>
+                    <div class="lower-content">
+                        <h3><a href="blog-single.html">{{article.nom}} {{article.scategorie.nom}}</a></h3>
+                        <div class="text">N° de référence: {{article.codeArticle}}</div>
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <div class="author">
+                                    <div class="author-image">
+                                        <a  class="u-icon-v1 u-icon-size--sm g-color-gray-dark-v5 g-color-primary--hover g-font-size-15 rounded-circle" [routerLink]="['boutique/details',article.id]" data-toggle="tooltip" >
+                                            <i  class="zmdi zmdi-shopping-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <div class="price">{{article.prix}}&nbsp;DT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+</section>
+
+<!--End Featured Section-->

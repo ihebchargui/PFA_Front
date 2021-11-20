@@ -1,65 +1,3 @@
-
-<div class="container bootstrap snippets bootdey">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="main-box no-header clearfix">
-                <div class="main-box-body clearfix">
-                    <div class="table-responsive">
-                        <table class="table user-list">
-                            <thead>
-                                <tr>
-                                <th><span>Categorie</span></th>
-                                
-                                <th>&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let categorie of categories">
-                                    <td>
-                                        <a href="#" class="user-link">{{categorie.nom}} </a>
-                                        <span class="user-subhead">{{categorie.nom}}</span>
-                                    </td>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <td style="width: 20%;">
-                                        <!--a    (click)="onOpenModal(categorie, 'edit')" class="btn">
-                                           <span>
-                                                <i  style='font-size:20px' class='fas fa-user-edit '></i>
-                                            </span>
-                                        </a-->
-
-                                        <a (click)="onOpenModal(categorie, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
-                                            <i  style='font-size:20px' class='fas fa-user-edit '></i>
-                                        </a>
-
-  
-            
-                       
-                                        <a href="/admin"  (click)="deleteCat(categorie.id) " class="table-link danger">
-                                            <span>
-                                                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
-                                            </span>
-                                        </a>
-
-
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!------------------------------------------------------------------------->
-
-
 <div class="content-page">
 
     <!-- Start content -->
@@ -72,7 +10,11 @@
                     <div class="breadcrumb-holder">
                         <h1 class="main-title float-left">Categories</h1>
                         <ol class="breadcrumb float-right">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item">
+                                <a href="/admin">
+                                <span>Home</span>
+                            </a>
+                            </li>
                             <li class="breadcrumb-item active">Categories</li>
                         </ol>
                         <div class="clearfix"></div>
@@ -103,10 +45,7 @@
                             </span>
                            
                             
-                                <form class="form-inline my-2 my-lg-0">
-                                  <input type="search" (ngModelChange)="searchCategories(key.value)" #key="ngModel" ngModel
-                                   name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search clients..." required>
-                               </form>
+                               
                              </div>
                         
                         <!-- end card-header -->
@@ -155,25 +94,63 @@
 
 
 <div class="container" id="main-container">
+    
+<div class="container bootstrap snippets bootdey">
     <div class="row">
-      <div *ngFor="let categorie of categories" class="col-md-6 col-xl-3">
-         <div class="card m-b-30">
-            <div class="card-body row">
-               
-               <div class="col-6 card-title align-self-center mb-0">
-                  <h5>{{categorie.nom}}</h5>
-               </div>
-            </div>
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Categorie</span></th>
+                                
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let categorie of categories">
+                                    <td>
+                                        <a class="user-link">{{categorie.nom}} </a>
+                                    </td>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <td style="width: 20%;">
+                                        <!--a    (click)="onOpenModal(categorie, 'edit')" class="btn">
+                                           <span>
+                                                <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                            </span>
+                                        </a-->
+
+                                        <a (click)="onOpenModal(categorie, 'edit')" class="btn " data-placement="top" data-original-title="Edit">
+                                            <i  style='font-size:20px' class='fas fa-user-edit '></i>
+                                        </a>
+
+  
             
-            <div class="card-body">
-               <div class="float-right btn-group btn-group-sm">
-                  <a (click)="onOpenModal(categorie, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                  <a (click)="onOpenModal(categorie, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
-               </div>
+                       
+                                        <a (click)="onOpenModal(categorie, 'delete')"   class="table-link danger"class="btn">
+                                            <span>
+                                                <i  style='font-size:20px; margin-left: 5px;' class="far fa-trash-alt "></i>
+                                            </span>
+                                        </a>
+
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
     </div>
+</div>
     
     <!-- Add Employee Modal -->
     <div class="modal fade" id="addCategorieModal" tabindex="-1" role="dialog" aria-labelledby="addCategorieModalLabel" aria-hidden="true">
@@ -576,7 +553,7 @@
   </div-->
 
   
-<mat-tab-group mat-align-tabs="center" class="main-tabs__tab">
+<!--mat-tab-group mat-align-tabs="center" class="main-tabs__tab">
     <mat-tab class="active" label="Meilleures catégories">
 
         <div class="main-tabs__content main-tab-1">
@@ -646,7 +623,7 @@
 
 
 </mat-tab>
-</mat-tab-group>
+</mat-tab-group-->
   
   
   

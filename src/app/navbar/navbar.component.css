@@ -30,10 +30,12 @@ align-items:center;}
 
 /*  el top nav li mel fou9***************************************************************/
 .header__topline-phone{
-color:#4d4c4c;
+/*color:#4d4c4c;*/
+color:#298dcd;
 position:relative;
 display:flex;
 align-items:center;
+font-weight: 700;
 margin-right :140px;
 padding-left :40px;
 }
@@ -49,9 +51,10 @@ img{
 max-width:120px
 }
 .header__topline-email{
-color:#4d4c4c;
+color:#298dcd;
 position:relative;
 display:flex;
+font-weight: 700;
 align-items:center;
 margin-right :240px;
 padding-left :60px;
@@ -142,12 +145,6 @@ align-items :center;
 margin-bottom :43px;
 }
 
-.header__content-logo{width :340px;
-margin-right :61px;}
-
-img{
-max-width :100%;
-}
 
 
 
@@ -215,12 +212,21 @@ margin-bottom: 0;
 }
 
 .header .header__content-logo {
-width: 340px;
-margin-left: 271px;
+width: 200px;
+margin-left: 300px;
 }
 .header .header__content-logo img {
 max-width: 100%;
 }
+
+.header__content-logo{
+    width :100px;
+margin-right :61px;}
+
+img{
+max-width :100%;
+}
+
 
 .header__content .header__content-search {
 position: relative;

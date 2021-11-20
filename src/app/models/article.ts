@@ -1,4 +1,5 @@
 export interface Article {
+  modele: any;
 
 
 
@@ -6,7 +7,7 @@ export interface Article {
 	     nom: string;
 	    codeArticle: string;
 	     description: string;
-	    remise: number;
+       quantite: number;
         image:string;
 	     prix : number;
         categorie: any;
@@ -14,8 +15,8 @@ export interface Article {
 
         id_scategorie: number;
         nom_scategorie: string;
-        id_categorie:number;
-        nom_categorie:string;
+        id_modele:number;
+        nom_modele:string;
     
       
 

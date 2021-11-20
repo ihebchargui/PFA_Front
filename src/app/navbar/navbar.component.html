@@ -3,13 +3,13 @@
   <div class="header__topline">
       <div class="container-wrapper d-flex align-items-center justify-content-between">
                           <div class="header__topline-phone">
-                              <i class="fa fa-phone-alt"></i>
-                              +216 24319840
+                              <i class="fa fa-phone-alt"></i>&nbsp;
+                              +216 24 319 840
                             </div>
                       <div class="header__topline-email">
-                          <i class="fa fa-envelope"></i>
-                          support@email.com </div>
-          <div class="header__topline-shipping">Livraison gratuite à partir de 120&nbsp;DT</div>
+                          <i class="fa fa-envelope"></i>&nbsp;
+                          iheb.chargui123@gmail.com </div>
+          <div class="header__topline-shipping">Livraison gratuite</div>
                          
          
           
@@ -71,12 +71,14 @@
   <div class="header__content">
       <div class="container-wrapper d-flex align-items-center">
           <div class="header__content-logo">
-              <a class="ga-click" data-gac="Main_menu" data-ga-action="Main_menu" href="/boutique"><img alt="toppiecesvoiture.fr boutique en ligne" src="https://www.toppiecesvoiture.fr/top/img/logo_fr.png?1616409647" /></a>            </div>
+              <a class="ga-click" data-gac="Main_menu" data-ga-action="Main_menu" href="/boutique">
+                <img alt="toppiecesvoiture.fr boutique en ligne" src="../../assets/images/logof.png" />              </a>           
+             </div>
                       <form action="https://www.toppiecesvoiture.fr/ersatzteile-suche" method="get"
                 id="search_form" name="search_form" class="header__content-search">
               <input class="input-search" id="search" name="keyword" type="text"
-                     placeholder="Rechercher un article" >
-                     <button class="input-button" onclick="formSubmit()">
+                     placeholder="Rechercher un article" [(ngModel)]="recherche" >
+                     <button class="input-button" (click)="rechercher()" >
                 <i class="zmdi zmdi-search"></i></button>
               <div id="autocomplete-suggestions-list"></div>
           </form>
@@ -87,14 +89,7 @@
    
 
      <div class="header__content-cart">
-              <div class="wishlist-header">
-                  <div class="wishlist-header">
-                                          <i class="zmdi zmdi-favorite-outline"></i>
-
-                      <!--i class="fa fa-heart"></i-->
-                      <span class="count">0</span>
-                  </div>
-              </div>
+              
 
              
               
@@ -166,25 +161,25 @@
         <ul class="header__navigation-main">
 
             <li class="header__navigation-main-item js-dd-menu-title " >
-                <a class="link " href="#">
+                <a class="link " href="/boutique/produitgrid">
                     <span class="link dd-menu js-dd-menu">Pièces détachées</span>
                 </a>
                   </li>
 
-            <li class="header__navigation-main-item js-dd-menu-title " >
+            <!--li class="header__navigation-main-item js-dd-menu-title " >
                 <a class="link  " href="/boutique/addproduit">
                     <span class="link dd-menu js-dd-menu">Fabricants</span>
                 </a>
                 
-            </li>
+            </li-->
 
-            <li class="header__navigation-main-item js-dd-menu-title" >  
+            <!--li class="header__navigation-main-item js-dd-menu-title" >  
                  <a class="link  " href="/boutique/addproduit">
             
                   <span class="link dd-menu js-dd-menu" >Marques de voitures</span>
                  </a>
                            
-  </li>
+  </li-->
         </ul>
         <ul class="header__navigation-second">
             <li class="header__navigation-main-item js-dd-menu-title" >  
@@ -201,6 +196,15 @@
      <span class="link dd-menu js-dd-menu" >Contact</span>
     </a>
               
+</li>
+
+<li class="header__navigation-main-item js-dd-menu-title" >  
+  <a *ngIf="loggedUser" class="link  " href="/admin">
+
+   <span class="link dd-menu js-dd-menu" >Admin</span>
+  </a>
+ 
+
 </li>
             
         </ul>
