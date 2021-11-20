@@ -2,8 +2,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, NgForm } from '@angular/forms';
 import { Article } from '../models/article';
+import { Modele } from '../models/modele';
 import { Scategorie } from '../models/scategorie';
 import { ArticleService } from '../service/article.service';
+import { ModeleService } from '../service/modele.service';
 import { ScategorieService } from '../service/scategorie.service';
 
 @Component({
@@ -20,6 +22,7 @@ export class ArticleComponent implements OnInit {
   public imagePath;
    */
   listScategories=[] ;
+  listModeles=[] ;
   data=[]
 
 
@@ -28,8 +31,9 @@ export class ArticleComponent implements OnInit {
   public editArticle:Article;
   public deleteArticle: Article;
   ScategorieList: Scategorie[];
+  ModeleList: Modele[];
   public scategories:Scategorie [];
-  constructor(public articleService: ArticleService,private scategorieService:ScategorieService,public fb: FormBuilder) { }
+  constructor(public articleService: ArticleService,private scategorieService:ScategorieService,private modeleService: ModeleService ,public fb: FormBuilder) { }
 
   ngOnInit(): void {
     
@@ -46,6 +50,15 @@ export class ArticleComponent implements OnInit {
       
          
        });
+
+       r.forEach(element => {
+        console.log(this.listModeles.some(e => e.modele.id === element.modele.id));
+        if(! this.listModeles.some(e => e.modele.id === element.modele.id)) {
+          this.listModeles.push({modele:element.modele})
+        }
+     
+        
+      });
        console.log('rés',this.listScategories);
      })
 
@@ -62,6 +75,9 @@ export class ArticleComponent implements OnInit {
     this.scategorieService.getScategories().subscribe(
       response =>{this.ScategorieList = response;}
       );
+      this.modeleService.getModeles().subscribe(
+        response =>{this.ModeleList = response;}
+        );
   }
 
   infoForm() {
@@ -74,7 +90,8 @@ export class ArticleComponent implements OnInit {
         prix: ['', [Validators.required]],
         id_scategorie: ['', [Validators.required]],
         nom_scategorie: ['', [Validators.required]],
-        
+        id_modele: ['', [Validators.required]],
+        nom_modele: ['', [Validators.required]],
         
       });
     }
@@ -109,12 +126,16 @@ export class ArticleComponent implements OnInit {
   
   public onAddArticle(addForm: NgForm): void {
     const val=addForm.value;
-    
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',val)
     
     const data = {
       ...addForm.value,
       scategorie:{
-        id:val.id
+        id:val.id_scategorie
+
+      },
+      modele:{
+        id:val.id_modele
       }
     }
   document.getElementById('add-article-form').click();

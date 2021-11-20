@@ -96,21 +96,21 @@
 						<!--Contact Form-->
 						<div class="contact-form">
 
-							<form method="post" action="sendemail.php" id="contact-form">
+							<form #addForm="ngForm" (ngSubmit)="onAddMessage(addForm)">
 								<div class="row clearfix">
 									<div class="form-group col-lg-6 col-md-6 col-sm-12">
-										<input type="text" name="name" value="" placeholder="Prénom" required>
+										<input type="text" ngModel name="nom" class="form-control" id="nom" placeholder="Name" required>
 									</div>
 									<div class="form-group col-lg-6 col-md-6 col-sm-12">
-										<input type="email" name="email" value="" placeholder="Email" required>
+										<input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
 									</div>
 									
 									
 									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<textarea name="message" placeholder="Veuillez décrire brièvement le problème"></textarea>
+										<textarea ngModel name="message" class="form-control" id="message" placeholder="Veuillez décrire brièvement le problème"></textarea>
 									</div>
 									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<button type="submit" class="theme-btn btn-style-two">Submit</button>
+										<button id="add-message-form" [disabled]="addForm.invalid" type="submit" class="theme-btn btn-style-two">Submit</button>
                                     </div>
 								</div>
 							</form>
@@ -143,8 +143,42 @@
 						<!--End Map Info Section-->
 						
 					</div>
+                    
 				</div>
+
+                <div id="content">
+                    <div class="w_cont">
+                <div class="right_col">
+                    
+                    <div class="infobox">
+                        <div class="title">BOÎTE D’INFOS</div>
+                        <div class="items">
+                            <p>Livraison gratuite</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="work_hours">
+                                    <div class="title">Lundi-Samedi<br>8h - 18h</div>
+                            <div class="hotline">
+                                <p>ASSISTANCE TÉLÉPHONIQUE</p>
+                                <span>+216 24 319 840</span>
+                            </div>
+                                <div class="email">
+                            <p>ADRESSE ÉLECTRONIQUE</p>
+                            <span>iheb@gmail.com</span>
+                        </div>
+                        <div class="adresse">
+                            <p>ADRESSE POSTALE</p>
+                            <span>AVENUE AZZOUZ BOUKHRIS <br> SAHLOUL 3<br>SOUSSE</span>
+                        </div>
+                      
+                    </div>
+                        </div>
+                    </div>
+                </div>
 				
 			</div>
 		</div>
 	</section>
+    

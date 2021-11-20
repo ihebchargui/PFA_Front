@@ -126,15 +126,11 @@ export class ScategorieComponent implements OnInit {
   }
   
 
-  public onUpdateScategorie(scategorie: Scategorie,addForm: NgForm): void {
-       /*  scategorie = {
-      ...scategorie,
-      categorie:{
-        id:scategorie.id
-      }
-    }*/
-     
-    this.scategorieService.updateScategorie(addForm.value).subscribe(
+  public onUpdateScategorie(scategorie: Scategorie,nom): void {
+
+    console.log('dadwaaaaaaaaaaaaaaaaaaaaaaawawaada',scategorie)
+    this.scategorieService.updateScategorie(scategorie).subscribe(
+    
       (response: Scategorie) => {
         console.log(response);
         this.getScategories();
@@ -208,8 +204,9 @@ export class ScategorieComponent implements OnInit {
   console.log(key);
   const results: Scategorie[] = [];
   for (const scategorie of this.scategories) {
-    if (scategorie.nom.toLowerCase().indexOf(key.toLowerCase()) !== -1)
-     {
+    if (scategorie.nom.toLowerCase().indexOf(key.toLowerCase()) !== -1 || scategorie.categorie.nom.toLowerCase().indexOf(key.toLowerCase()) !== -1)
+
+    {
       results.push(scategorie);
     }
   }

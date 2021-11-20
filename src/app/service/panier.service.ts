@@ -23,13 +23,13 @@ export class PanierService {
     .pipe(
       tap(Commande =>{ 
       console.log(Commande);
-      this.toastr.success('Commande Ajouter', 'Toastr fun!');
+      this.toastr.success('Commande Ajouter');
       }),
      mapTo(true)
       ,
       catchError(error => {
         
-        this.toastr.error('Error !!!'+error, 'Toastr fun!');
+        this.toastr.error('Error !!!'+error, 'Erreur!');
         return of(false);
       }));
   }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Article } from '../models/article';
+import { Modele } from '../models/modele';
 import { Scategorie } from '../models/scategorie';
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,9 @@ public getArticles():Observable<Article[]>{
 }
 public getByScategory():Observable<Scategorie[]>{
   return this.http.get<Scategorie[]>(`${this.apiurl}/findbyScategory?scategorie=`);
+}
+public getByModele():Observable<Modele[]>{
+  return this.http.get<Modele[]>(`${this.apiurl}/findbyModele?modele=`);
 }
 
 

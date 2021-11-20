@@ -1,0 +1,73 @@
+
+
+<div class="container">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-md-9">
+        <div class="g-pr-15--lg">
+          
+          <div class="g-brd-bottom g-brd-gray-light-v4" *ngFor="let article of articles">
+            <div class="row g-pt-30">
+              <div class="col-6 col-sm-5 col-lg-4 g-mb-30">
+                <figure class="g-pos-rel">
+                  <img class="img-fluid" src="{{article.image}}" alt="Image Description">
+
+                  
+                </figure>
+              </div>
+
+              <div class="col-6 col-sm-7 col-lg-8 g-mb-15">
+                <!-- Product Info -->
+                <div class="g-mb-30">
+                  <h4 class="h5 g-color-black mb-0 mt-1">
+                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="#">
+                        {{article.nom}},{{article.scategorie.nom}}
+                    </a>
+                  </h4>
+                  <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 mb-2" href="#"> N° de référence {{article.codeArticle}}</a>
+                  <span class="d-block g-color-black g-font-size-20 mb-4">{{article.prix}}&nbsp;DT</span>
+                  <p>{{article.description}}</p>
+                </div>
+                <!-- End Product Info -->
+
+              
+
+               
+                <a class="theme-btn btn-style-two g-font-size-12 text-uppercase g-py-10 g-px-20" href="#">
+                    Add to Cart
+                    <i class="zmdi zmdi-shopping-cart-plus"></i>
+  
+                  </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Products -->
+         
+          
+         
+          
+          
+          </div>
+      </div>
+      <!-- End Content -->
+
+      <!-- Filters -->
+      <div class="col-md-3 g-brd-left--lg g-brd-gray-light-v4 g-pt-40" >
+        <div class="g-pl-15--lg g-pt-60">
+          <!-- Categories -->
+          <div class="g-mb-30" >
+            <h3 class="h5 mb-3">Recherche</h3>
+              <form class="form-inline my-2 my-lg-0">
+                <input type="search" (ngModelChange)="searchScategories(key.value)" #key="ngModel" ngModel
+                 name="key" id="searchName" class="form-control mr-sm-2" placeholder="Chercher par..." required>
+             </form>
+            
+          </div>
+          <!-- End Categories -->
+     
+        </div>
+      </div>
+      <!-- End Filters -->
+      
+    </div>
+  </div>

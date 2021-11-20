@@ -1,3 +1,4 @@
+<!--
 <div class="container"> 
    
    <div class="line" ></div>
@@ -70,7 +71,7 @@
    </div>
    </div>
 
-
+------------------------------------------------------------------------------------------------------->
    <div class="overlay" style="display: block;"></div>
 <div class="popup-registration register-js" style="display: block;">
     <div class="popup-registration__close">
@@ -142,7 +143,7 @@
   
       <input   type="file"  accept="image/*" (change)="onSelectFile($event)" multiple  id="exampleInputFile" />
       <div style="display: inline-block;" *ngFor="let imgURL of imgURL">
-      <img [src]="imgURL" height="50" width="200" *ngIf="imgURL">
+      <img [src]="imgURL" height="50" width="100" *ngIf="imgURL">
    </div>
     
 
